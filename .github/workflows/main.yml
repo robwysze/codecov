@@ -27,15 +27,10 @@ jobs:
 
       - name: Unit test
         run: |
-          python -m pytest tests --cov codecov --cov-report=xml --color=yes
-          python -m pytest --cache-clear --cov codecov tests > pytest-coverage.txt
+          python -m pytest tests --cache-clear --cov codecov --cov-report=xml --color=yes
+          python -m pytest tests --cache-clear --cov codecov
 
       - name: Upload coverage to codecov
         uses: codecov/codecov-action@v2
         with:
           file: ./coverage.xml
-
-      - name: Comment coverage
-        uses: coroo/pytest-coverage-commentator@v1.0.2
-        with:
-          pytest-coverage: pytest-coverage.txt
