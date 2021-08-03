@@ -23,11 +23,11 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install pytest pytest-cov
           # Install additional python packages
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          if [ -f requirements.txt ]; then python -m pip install -r requirements.txt; fi
 
       - name: Unit test
         run: |
-          pytest tests --cov codecov --cov-report=xml --color=yes
+          python -m pytest tests --cov codecov/ --cov-report=xml --color=yes
 
       - name: Upload coverage to codecov
         uses: codecov/codecov-action@v2
