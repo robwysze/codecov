@@ -8,3 +8,10 @@ def test_addition():
     s_number = 2
     expected = 4
     assert Calculator.addition(f_number, s_number) == expected
+
+
+def test_subtraction():
+    f_number = 5
+    s_number = 2
+    expected = 3
+    assert Calculator.subtraction(f_number, s_number) == expected
