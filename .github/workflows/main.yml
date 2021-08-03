@@ -28,7 +28,7 @@ jobs:
       - name: Unit test
         run: |
           python -m pytest tests --cache-clear --cov codecov --cov-report=xml --color=yes
-          python -m pytest tests --cache-clear --cov codecov
+          python -m pytest tests --cache-clear --cov codecov --cov-report=html
 
       - name: Upload coverage to codecov
         uses: codecov/codecov-action@v2
