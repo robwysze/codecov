@@ -6,3 +6,13 @@ class Calculator:
     @staticmethod
     def subtraction(a, b):
         return a - b
+
+    @staticmethod
+    def multiplication(a, b):
+        return a * b
+
+    @staticmethod
+    def division(a, b):
+        if b == 0:
+            return None
+        return a / b
